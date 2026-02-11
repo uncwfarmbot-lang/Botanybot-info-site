@@ -118,7 +118,9 @@
 
   /* MAGIC SETTINGS */
   /* Darker blacks + less "haze" */
-  filter: brightness(0.90) contrast(1.18) saturate(1.18);
+  /* Make greenery pop without crushing the image */
+  /* Apple-style: bright, clean, natural */
+  filter: brightness(1.12) contrast(1.08) saturate(1.18);
 
   /* subtle motion */
   animation: slowZoom 45s ease-in-out infinite alternate;
@@ -131,7 +133,9 @@
   z-index: -1;
 
   /* Remove the milky white gradient + lean darker */
-  background: rgba(0,0,0,0.55);
+  /* Lighter tint so the video colors show through */
+  /* Ultra-clean look — barely tinted */
+  background: rgba(255,255,255,0.06);
 }
 
 /* Kill any "frost" layer from the rain overlay (even if styles.css defines it) */
@@ -150,8 +154,8 @@
   inset: 0;
   pointer-events: none;
   box-shadow:
-    inset 0 0 120px rgba(0,0,0,0.45),
-    inset 0 0 35px rgba(0,0,0,0.25);
+    inset 0 0 80px rgba(0,0,0,0.18),
+    inset 0 0 20px rgba(0,0,0,0.10);
 }
 
 
