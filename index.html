@@ -117,22 +117,25 @@
   border: 0;
 
   /* MAGIC SETTINGS */
-  filter: brightness(1.05) contrast(1.00) saturate(1.25);
+  /* Darker blacks + less "haze" */
+  filter: brightness(0.90) contrast(1.18) saturate(1.18);
 
   /* subtle motion */
   animation: slowZoom 45s ease-in-out infinite alternate;
 }
 
-/* Overlay tint (this fixes the "washed out" look) */
+/* Overlay tint (darker = deeper blacks, less grey/frost) */
 .overlay {
   position: absolute;
   inset: 0;
   z-index: -1;
 
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0.12)),
-    rgba(0,0,0,0.35);
+  /* Remove the milky white gradient + lean darker */
+  background: rgba(0,0,0,0.55);
 }
+
+/* Kill any "frost" layer from the rain overlay (even if styles.css defines it) */
+.frost-shine { display: none !important; }
 
 /* slow zoom animation */
 @keyframes slowZoom {
